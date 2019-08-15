@@ -41,7 +41,7 @@ func main() {
 	pizza := Pizza {
 		pizzaType: "regular",
 	}
-  pizza.orderPizza()
+  	pizza.orderPizza()
   
   // สั่งพิซซ่าชีส
 	pizza2 := Pizza {
