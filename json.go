@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+
+	jsoniter "github.com/json-iterator/go"
 )
 
 // Person is person
@@ -47,9 +49,14 @@ func main() {
 		}
 	`)
 	var person Person
-	err := json.Unmarshal(data, &person)
-	if err != nil {
-		fmt.Println(err)
+	var personWithJsoniter Person
+	// Use standard
+	err1 := json.Unmarshal(data, &person)
+	// Use jsoniter for better performance
+	var jsonTool = jsoniter.ConfigCompatibleWithStandardLibrary
+	err2 := jsonTool.Unmarshal(data, &personWithJsoniter)
+	if err1 != nil || err2 != nil {
+		fmt.Println(err1, err2)
 	}
 	fmt.Println(person)
 }
