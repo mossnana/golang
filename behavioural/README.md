@@ -9,3 +9,9 @@ pattern นี้ให้ subject ส่งอีเวลล์หา object �
 ### Use Cases
 - Email subscribe
 - E-commerce : ลูกค้าเช็คว่าของมีใน stock หรือไม่
+
+## Template
+template(interface) -> compose methods()
+
+object A(template) -> implement interface method with own logic
+object B(template) -> implement interface method with own logic
